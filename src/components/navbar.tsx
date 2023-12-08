@@ -25,12 +25,12 @@ const Navbar = () => {
 
 	return (
 		<nav className='fixed top-0 z-50 w-full'>
-			<div className='flex justify-between items-center max-md:border max-sm:bg-opacity-20 max-md:backdrop-blur-lg '>
+			<div className='flex justify-between items-center max-md:border max-md:bg-opacity-20 max-md:backdrop-blur-lg '>
 				<div className='flex-col md:mx-auto md:container w-full p-4 md:p-[23px] '>
 					{/* Main Menu */}
 					<div
 						className={
-							"flex flex-row items-center justify-between md:p-3 gap-x-1 md:rounded-2xl md:mx-8 md:border max-md:border-none bg-opacity-20 backdrop-blur-lg"
+							"flex flex-row items-center justify-between md:p-3 gap-x-1 md:rounded-2xl md:mx-8 md:border max-md:border-none md:bg-opacity-20 md:backdrop-blur-lg"
 						}>
 						{/* Left Logo */}
 						<div>
