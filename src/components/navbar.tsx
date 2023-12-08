@@ -26,13 +26,12 @@ const Navbar = () => {
 
 	return (
 		<header className='sticky top-0 z-40 bg-opacity-20 backdrop-blur-lg'>
-			<div className='md:pt-5 flex justify-between items-center '>
-				<div className='flex flex-col md:mx-5 w-full md:container '>
+			<div className='flex justify-between items-center max-md:border'>
+				<div className='flex flex-col md:mx-auto md:container w-full p-4 md:p-[23px]'>
 					<div
-						className={cn(
-							"flex flex-row items-center justify-between md:p-3 p-5 py-5 gap-x-1 md:rounded-2xl md:border border-b",
-							isMenuOpen && "border-none"
-						)}>
+						className={
+							"flex flex-row items-center justify-between md:p-3 gap-x-1 md:rounded-2xl mx-5 md:border max-md:border-none"
+						}>
 						{/* Left Logo */}
 						<div>
 							<Link href={"/"} className='flex flex-row space-x-2'>
@@ -76,7 +75,7 @@ const Navbar = () => {
 
 					{/* Mobile Navigation Menu */}
 					{isMenuOpen && (
-						<div className='md:hidden text-primary p-4 border-b flex flex-col text-sm font-light space-y-5'>
+						<div className='md:hidden text-primary p-4 flex flex-col text-sm font-light space-y-5'>
 							<NavigationLinks />
 						</div>
 					)}
