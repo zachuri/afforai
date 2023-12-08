@@ -13,7 +13,7 @@ const items = [
 
 const Carousel = () => {
 	return (
-		<div className='w-full z-20 '>
+		<div className='w-full z-20 text-[#525252]'>
 			{/* Display items on medium screens and up */}
 			<div className='hidden lg:flex flex-row items-center justify-center space-x-5'>
 				{items.map((item, index) => (
