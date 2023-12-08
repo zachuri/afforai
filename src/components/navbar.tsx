@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { Icons } from "./ui/icons";
 import { useState } from "react";
-import { cn } from "../../utils/utils";
+import Image from "next/image";
 
 function NavigationLinks() {
 	return (
@@ -34,8 +34,12 @@ const Navbar = () => {
 						}>
 						{/* Left Logo */}
 						<div>
-							<Link href={"/"} className='flex flex-row space-x-2'>
-								<img src='/assets/logo.png' alt='logo' width={25} height={25} />
+							<Link href={"/"} className='flex flex-row items-center space-x-2'>
+								<img
+									className='w-[24px] h-[24px]'
+									src='/assets/logo.png'
+									alt='logo'
+								/>
 								<h1 className='text-lg font-norma font-normal'>Afforai</h1>
 							</Link>
 						</div>
