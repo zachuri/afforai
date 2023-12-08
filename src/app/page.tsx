@@ -5,6 +5,7 @@ import Landing4 from "@/components/landing-4";
 import Landing5 from "@/components/landing-5";
 import MasterHead from "@/components/mast-head";
 import Users from "@/components/users";
+import Landing7 from '@/components/landing-7';
 
 export default function Home() {
 	return (
@@ -13,7 +14,8 @@ export default function Home() {
 			<Users />
 			<Landing4 />
 			<Landing5 />
-			<Landing6 />
+			{/* <Landing6 /> */}
+			<Landing7 />
 		</main>
 	);
 }

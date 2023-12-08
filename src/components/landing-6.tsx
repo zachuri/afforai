@@ -17,7 +17,7 @@ const Landing6 = () => {
 					technology.
 				</p>
 			</div>
-			<div className='-mt-[60px]'>
+			<div className=''>
 				<GridImages />
 			</div>
 		</section>
