@@ -24,7 +24,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className='sticky top-0 z-40 '>
+		<nav className='fixed top-0 z-50 w-full'>
 			<div className='flex justify-between items-center max-md:border max-sm:bg-opacity-20 max-md:backdrop-blur-lg '>
 				<div className='flex-col md:mx-auto md:container w-full p-4 md:p-[23px] '>
 					{/* Main Menu */}
@@ -79,7 +79,7 @@ const Navbar = () => {
 
 					{/* Mobile Navigation Menu */}
 					{isMenuOpen && (
-						<div className='md:hidden text-primary p-4 flex flex-col text-sm font-light space-y-5 static bg-opacity-20 backdrop-blur-lg'>
+						<div className='md:hidden text-primary p-4 flex flex-col text-sm font-light space-y-5 bg-opacity-20 backdrop-blur-lg'>
 							<NavigationLinks />
 						</div>
 					)}
