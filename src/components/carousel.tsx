@@ -19,7 +19,7 @@ const Carousel = () => {
 				{items.map((item, index) => (
 					<div
 						key={index}
-						className='flex flex-row items-center justify-center text-xs border p-1 px-2 rounded-sm space-x-2 bg-primary-foreground'>
+						className='flex flex-row items-center justify-center text-xs border p-1 px-2 rounded-sm space-x-2 bg-[#FAFAFA]'>
 						<Icons.check />
 						<p>{item}</p>
 					</div>
@@ -31,7 +31,7 @@ const Carousel = () => {
 				<SliderContainer contentWidth={1062} initialOffsetX={0}>
 					{items.map((item, index) => (
 						<SliderItem key={index} width={250}>
-							<div className='flex flex-row items-center justify-center text-sm border p-1 px-2 rounded-sm space-x-2 bg-primary-foreground'>
+							<div className='flex flex-row items-center justify-center text-sm border p-1 px-2 rounded-sm space-x-2 bg-[#FAFAFA]'>
 								<Icons.check />
 								<p>{item}</p>
 							</div>
