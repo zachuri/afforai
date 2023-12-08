@@ -11,7 +11,7 @@ const items = [
 
 const Landing4 = () => {
 	return (
-		<section className='flex flex-col md:grid grid-cols-2 gap-4'>
+		<section className='flex flex-col md:grid grid-cols-2 gap-4 mb-[100px]'>
 			{/* Content */}
 			<div className='md:flex flex-col justify-center items-start space-y-4 px-3 mr-5'>
 				<h2 className='text-[36px] font-semibold md:mr-[50px]'>

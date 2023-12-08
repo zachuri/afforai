@@ -22,6 +22,7 @@ const buttonVariants = cva(
 					"border border-input bg-secondary hover:bg-accent hover:text-accent-foreground font-light",
 				accent:
 					"font-light text-white border border-input bg-gradient-to-tl from-custom-purple-600 via-custom-purple-400 to-custom-purple-700 to-custom-purple-900",
+				purple: "border-[2px] text-xs border-[#8036FF] text-[#8036FF]",
 			},
 			size: {
 				default: "h-10 px-4 py-2",
