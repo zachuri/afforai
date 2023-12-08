@@ -1,6 +1,6 @@
 "use client";
 
-import Landing6 from '@/components/lading-6';
+import Landing6 from "@/components/landing-6";
 import Landing4 from "@/components/landing-4";
 import Landing5 from "@/components/landing-5";
 import MasterHead from "@/components/mast-head";
