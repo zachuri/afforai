@@ -50,7 +50,7 @@ const MasterHead = () => {
 				/>
 			</div>
 
-			<div className='max-md:hidden mx-[72px] z-20'>
+			<div className='max-md:hidden pt-[50px] mx-[72px] z-20'>
 				<Image
 					src='/assets/laptop-landing-1.png'
 					alt='laptop landing 1'
