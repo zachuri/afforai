@@ -4,7 +4,6 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { Icons } from "./ui/icons";
 import { useState } from "react";
-import Image from "next/image";
 
 function NavigationLinks() {
 	return (
@@ -25,12 +24,13 @@ const Navbar = () => {
 	};
 
 	return (
-		<header className='sticky top-0 z-40 bg-opacity-20 backdrop-blur-lg'>
-			<div className='flex justify-between items-center max-md:border'>
-				<div className='flex flex-col md:mx-auto md:container w-full p-4 md:p-[23px]'>
+		<nav className='sticky top-0 z-40 '>
+			<div className='flex justify-between items-center max-md:border max-sm:bg-opacity-20 max-md:backdrop-blur-lg '>
+				<div className='flex-col md:mx-auto md:container w-full p-4 md:p-[23px] '>
+					{/* Main Menu */}
 					<div
 						className={
-							"flex flex-row items-center justify-between md:p-3 gap-x-1 md:rounded-2xl md:mx-8 md:border max-md:border-none"
+							"flex flex-row items-center justify-between md:p-3 gap-x-1 md:rounded-2xl md:mx-8 md:border max-md:border-none bg-opacity-20 backdrop-blur-lg"
 						}>
 						{/* Left Logo */}
 						<div>
@@ -79,13 +79,13 @@ const Navbar = () => {
 
 					{/* Mobile Navigation Menu */}
 					{isMenuOpen && (
-						<div className='md:hidden text-primary p-4 flex flex-col text-sm font-light space-y-5'>
+						<div className='md:hidden text-primary p-4 flex flex-col text-sm font-light space-y-5 static bg-opacity-20 backdrop-blur-lg'>
 							<NavigationLinks />
 						</div>
 					)}
 				</div>
 			</div>
-		</header>
+		</nav>
 	);
 };
 
