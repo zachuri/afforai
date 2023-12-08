@@ -40,12 +40,12 @@ const MasterHead = () => {
 				<Button variant={"third"}>View pricing</Button>
 			</div>
 
-			<div className='absolute z-10 rounded-[28px] w-full max-md:hidden'>
+			<div className='absolute z-10 rounded-[28px] w-full max-md:hidden flex justify-center items-center'>
 				<Image
 					src='/assets/laptop-landing-3.png'
 					alt='laptop landing 1'
-					width={"1000"}
-					height={"500"}
+					width={"2000"}
+					height={"1000"}
 					className='rounded-[28px]'
 				/>
 			</div>
@@ -54,7 +54,7 @@ const MasterHead = () => {
 				<Image
 					src='/assets/laptop-landing-1.png'
 					alt='laptop landing 1'
-					width={"1000"}
+					width={"1500"}
 					height={"500"}
 				/>
 			</div>
