@@ -27,7 +27,7 @@ const Navbar = () => {
 	return (
 		<header className='sticky top-0 z-40 bg-opacity-20 backdrop-blur-lg'>
 			<div className='md:pt-5 flex justify-between items-center '>
-				<div className='flex flex-col md:mx-14 w-full md:container '>
+				<div className='flex flex-col md:mx-5 w-full md:container '>
 					<div
 						className={cn(
 							"flex flex-row items-center justify-between md:p-3 p-5 py-5 gap-x-1 md:rounded-2xl md:border border-b",
@@ -42,7 +42,7 @@ const Navbar = () => {
 						</div>
 
 						{/* Middle Navigation Links - Desktop */}
-						<div className='hidden md:flex flex-row md:space-x-3 lg:space-x-5 text-sm'>
+						<div className='hidden md:flex flex-row space-x-5 text-sm'>
 							<NavigationLinks />
 						</div>
 
