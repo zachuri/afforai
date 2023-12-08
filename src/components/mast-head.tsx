@@ -3,11 +3,12 @@ import React from "react";
 import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
 import Carousel from "./carousel";
+import Image from "next/image";
 
 const MasterHead = () => {
 	return (
-		<section className='mx-[60px] w-full flex flex-col items-center justify-center space-y-10'>
-			<div className='px-2 p-1 border-[2px] border-black rounded-xl text-sm font-medium flex flex-row items-center justify-center space-x-2 bg-gradient-to-r from-[#fd7e14] to-[#ffc107]'>
+		<section className='relative mx-[60px] w-full flex flex-col items-center justify-center space-y-10 max-md:pt-5'>
+			<div className='max-md:w-full px-2 p-1 border-[2px] border-black rounded-xl text-sm font-medium flex flex-row items-center justify-center space-x-2 bg-gradient-to-r from-[#fd7e14] to-[#ffc107]'>
 				<img
 					className='w-[26px] h-[20px]'
 					src='/assets/appsumo.png'
@@ -21,11 +22,11 @@ const MasterHead = () => {
 				</Link>
 			</div>
 
-			<h1 className='max-w-[659px] text-5xl font-semibold content-center text-center'>
+			<h1 className='max-w-[343px] md:max-w-[659px] text-4xl md:text-5xl font-semibold text-left md:text-center max-md:self-start z-2'>
 				Your second brain for maximizing productivity
 			</h1>
 
-			<p className='max-w-[671px] text-center text-[#525252]'>
+			<p className='max-w-[671px] md:text-center text-[#525252] z-20'>
 				Afforai is an AI chatbot that searches, summarizes, and translates info
 				from multiple sources to produce trustworthy research. Feed lengthy
 				research documents to stacks of dry compliance requirements and extract
@@ -34,9 +35,28 @@ const MasterHead = () => {
 
 			<Carousel />
 
-			<div className='space-x-2'>
+			<div className='flex flex-col w-full max-md:space-y-3 md:flex-row md:justify-center md:items-center md:space-x-2 z-20'>
 				<Button variant={"accent"}>Try For Free</Button>
 				<Button variant={"third"}>View pricing</Button>
+			</div>
+
+			<div className='absolute z-10 rounded-[28px] w-full max-md:hidden'>
+				<Image
+					src='/assets/laptop-landing-3.png'
+					alt='laptop landing 1'
+					width={"1000"}
+					height={"500"}
+					className='rounded-[28px]'
+				/>
+			</div>
+
+			<div className='max-md:hidden mx-[72px] z-20'>
+				<Image
+					src='/assets/laptop-landing-1.png'
+					alt='laptop landing 1'
+					width={"1000"}
+					height={"500"}
+				/>
 			</div>
 		</section>
 	);

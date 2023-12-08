@@ -13,11 +13,11 @@ const items = [
 
 const Carousel = () => {
 	return (
-		<div className='w-[816px]'>
+		<div className='w-[816px] z-20'>
 			<SliderContainer contentWidth={1062} initialOffsetX={0}>
 				{items.map((item, index) => (
 					<SliderItem key={index} width={250}>
-						<div className='flex flex-row items-center justify-center text-xs border p-1 px-2 rounded-sm space-x-2'>
+						<div className='flex flex-row items-center justify-center text-xs border p-1 px-2 rounded-sm space-x-2 bg-primary-foreground'>
 							<Icons.check />
 							<p>{item}</p>
 						</div>
