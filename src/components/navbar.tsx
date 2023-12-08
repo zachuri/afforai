@@ -30,7 +30,7 @@ const Navbar = () => {
 				<div className='flex flex-col md:mx-auto md:container w-full p-4 md:p-[23px]'>
 					<div
 						className={
-							"flex flex-row items-center justify-between md:p-3 gap-x-1 md:rounded-2xl mx-5 md:border max-md:border-none"
+							"flex flex-row items-center justify-between md:p-3 gap-x-1 md:rounded-2xl mx-8 md:border max-md:border-none"
 						}>
 						{/* Left Logo */}
 						<div>
