@@ -3,7 +3,7 @@ import React from "react";
 
 const Users = () => {
 	return (
-		<section className='max-width-[1600px] mt-[100px] mb-[128px]'>
+		<section className='max-width-[1600px] mt-[100px] mb-[250px] '>
 			<div className='flex flex-col justify-center items-center gap-[24px]'>
 				<p className='text-primary-foreground'>
 					Loved by
