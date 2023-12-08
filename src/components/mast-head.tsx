@@ -47,6 +47,7 @@ const MasterHead = () => {
 					width={"2000"}
 					height={"1000"}
 					className='rounded-[28px]'
+          priority
 				/>
 			</div>
 
@@ -56,6 +57,7 @@ const MasterHead = () => {
 					alt='laptop landing 1'
 					width={"1500"}
 					height={"500"}
+          priority
 				/>
 			</div>
 		</section>
