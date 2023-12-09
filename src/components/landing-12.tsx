@@ -47,7 +47,7 @@ function Card({ src, title, content }: ItemProp) {
 				width={1200}
 				height={600}
 			/>
-			<div className='px-3 pt-2 pb-4'>
+			<div className='px-3 pt-2 pb-4 border-t'>
 				<h2 className='text-[#222222] text-lg'>{title}</h2>
 				<p className='text-primary-foreground text-xs'>{content}</p>
 			</div>
