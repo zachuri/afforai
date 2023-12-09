@@ -31,7 +31,7 @@ export default function Home() {
 			<Landing12 />
 			<TestitmonialReview />
       <Testimonials1 />
-      <Testimonials2 />
+			<Testimonials2 />
 		</main>
 	);
 }

@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 
 import React, { useCallback, useContext, useEffect, useRef } from "react";
@@ -13,112 +14,109 @@ interface Props {
 }
 
 const SliderContainer: React.FC<Props> = ({
-  children,
-  initialOffsetX,
-  className,
-  contentWidth,
-  direction = "left", // Default to left direction
+	children,
+	initialOffsetX,
+	className,
+	contentWidth,
+	direction = "left", // Default to left direction
 }) => {
-  const refScrollX = useRef<number>(initialOffsetX);
-  const refContainer = useRef<HTMLDivElement>(null);
-  const refContent = useRef<HTMLDivElement>(null);
-  const refIsDragging = useRef<boolean>(false);
-  const refDragStartX = useRef<number>(0);
+	const refScrollX = useRef<number>(initialOffsetX);
+	const refContainer = useRef<HTMLDivElement>(null);
+	const refContent = useRef<HTMLDivElement>(null);
+	const refIsDragging = useRef<boolean>(false);
+	const refDragStartX = useRef<number>(0);
 
-  const enabled = true; // Always enable scrolling for this example
+	const enabled = true; // Always enable scrolling for this example
 
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    refIsDragging.current = true;
-    refDragStartX.current = e.clientX;
-  }, []);
+	const handleMouseDown = useCallback((e: React.MouseEvent) => {
+		refIsDragging.current = true;
+		refDragStartX.current = e.clientX;
+	}, []);
 
-  const handleMouseUp = useCallback(() => {
-    refIsDragging.current = false;
-  }, []);
+	const handleMouseUp = useCallback(() => {
+		refIsDragging.current = false;
+	}, []);
 
-  const handleMouseMove = useCallback(
-    (e: MouseEvent) => {
-      if (refIsDragging.current) {
-        const deltaX = e.clientX - refDragStartX.current;
+	const handleMouseMove = useCallback((e: MouseEvent) => {
+		if (refIsDragging.current) {
+			const deltaX = e.clientX - refDragStartX.current;
 
-        if (deltaX !== 0) {
-          refScrollX.current -= deltaX;
-          const { current: elContainer } = refContainer;
+			if (deltaX !== 0) {
+				refScrollX.current -= deltaX;
+				const { current: elContainer } = refContainer;
 
-          if (elContainer) {
-            elContainer.scrollLeft = refScrollX.current;
+				if (elContainer) {
+					elContainer.scrollLeft = refScrollX.current;
 
-            if (refScrollX.current <= 0) {
-              refScrollX.current = elContainer.scrollLeft = 0;
-            } else if (refScrollX.current >= elContainer.scrollWidth - elContainer.clientWidth) {
-              refScrollX.current = elContainer.scrollLeft = elContainer.scrollWidth - elContainer.clientWidth;
-            }
-          }
+					if (refScrollX.current <= 0) {
+						refScrollX.current = elContainer.scrollLeft = 0;
+					} else if (
+						refScrollX.current >=
+						elContainer.scrollWidth - elContainer.clientWidth
+					) {
+						refScrollX.current = elContainer.scrollLeft =
+							elContainer.scrollWidth - elContainer.clientWidth;
+					}
+				}
 
-          refDragStartX.current = e.clientX;
-        }
-      }
-    },
-    []
-  );
+				refDragStartX.current = e.clientX;
+			}
+		}
+	}, []);
 
-  // Attach event listeners for mouse down, up, and move
-  useEffect(() => {
-    document.addEventListener("mousedown", handleMouseDown);
-    document.addEventListener("mouseup", handleMouseUp);
-    document.addEventListener("mousemove", handleMouseMove);
+	// Attach event listeners for mouse down, up, and move
+	useEffect(() => {
+		document.addEventListener("mousedown", handleMouseDown);
+		document.addEventListener("mouseup", handleMouseUp);
+		document.addEventListener("mousemove", handleMouseMove);
 
-    return () => {
-      document.removeEventListener("mousedown", handleMouseDown);
-      document.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [handleMouseDown, handleMouseUp, handleMouseMove]);
+		return () => {
+			document.removeEventListener("mousedown", handleMouseDown);
+			document.removeEventListener("mouseup", handleMouseUp);
+			document.removeEventListener("mousemove", handleMouseMove);
+		};
+	}, [handleMouseDown, handleMouseUp, handleMouseMove]);
 
-  useAnimationFrame(
-    enabled,
-    useCallback(() => {
-      const { current: elContainer } = refContainer;
-      const { current: elContent } = refContent;
+	useAnimationFrame(
+		enabled,
+		useCallback(() => {
+			const { current: elContainer } = refContainer;
+			const { current: elContent } = refContent;
 
-      if (elContainer && elContent && !refIsDragging.current) {
-        if (direction === "left") {
-          refScrollX.current += 0.2;
-        } else {
-          refScrollX.current -= 0.2;
-        }
+			if (elContainer && elContent && !refIsDragging.current) {
+				if (direction === "left") {
+					refScrollX.current += 0.2;
+				} else {
+					refScrollX.current -= 0.2;
+				}
 
-        elContainer.scrollLeft = refScrollX.current;
+				elContainer.scrollLeft = refScrollX.current;
 
-        if (
-          direction === "left" &&
-          elContainer.scrollLeft >= elContent.clientWidth
-        ) {
-          refScrollX.current = 0;
-          elContainer.scrollLeft = 0;
-        } else if (
-          direction === "right" &&
-          elContainer.scrollLeft <= 0
-        ) {
-          refScrollX.current = elContent.clientWidth;
-          elContainer.scrollLeft = elContent.clientWidth;
-        }
-      }
-    }, [direction])
-  );
+				if (
+					direction === "left" &&
+					elContainer.scrollLeft >= elContent.clientWidth
+				) {
+					refScrollX.current = 0;
+					elContainer.scrollLeft = 0;
+				} else if (direction === "right" && elContainer.scrollLeft <= 0) {
+					refScrollX.current = elContent.clientWidth;
+					elContainer.scrollLeft = elContent.clientWidth;
+				}
+			}
+		}, [direction])
+	);
 
-  return (
-    <div
-      ref={refContainer}
-      className={`slider-container overflow-x-hidden whitespace-nowrap max-w-full pointer-events-none ${className}`}
-    >
-      <div ref={refContent} className='inline-block'>
-        {children}
-      </div>
+	return (
+		<div
+			ref={refContainer}
+			className={`slider-container overflow-x-hidden whitespace-nowrap max-w-full pointer-events-none ${className}`}>
+			<div ref={refContent} className='inline-block'>
+				{children}
+			</div>
 
-      <div className={enabled ? "inline-block" : "hidden"}>{children}</div>
-    </div>
-  );
+			<div className={enabled ? "inline-block" : "hidden"}>{children}</div>
+		</div>
+	);
 };
 
 interface ItemProps {
