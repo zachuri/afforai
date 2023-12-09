@@ -11,6 +11,7 @@ interface Props {
 	className?: string;
 	contentWidth: number;
 	direction: "left" | "right"; // Add direction prop
+	id: number;
 }
 
 const SliderContainer: React.FC<Props> = ({
@@ -19,6 +20,7 @@ const SliderContainer: React.FC<Props> = ({
 	className,
 	contentWidth,
 	direction = "left", // Default to left direction
+	id,
 }) => {
 	const refScrollX = useRef<number>(initialOffsetX);
 	const refContainer = useRef<HTMLDivElement>(null);
@@ -109,7 +111,7 @@ const SliderContainer: React.FC<Props> = ({
 	return (
 		<div
 			ref={refContainer}
-			className={`slider-container overflow-x-hidden whitespace-nowrap max-w-full pointer-events-none ${className}`}>
+			className={`slider-container overflow-x-hidden whitespace-nowrap max-w-full pointer-events-none ${className} [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]`}>
 			<div ref={refContent} className='inline-block'>
 				{children}
 			</div>
