@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
-import Carousel from "./carousel";
+import Carousel from "./mast-carousel";
 import Image from "next/image";
 
 const MasterHead = () => {

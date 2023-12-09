@@ -11,7 +11,7 @@ const items = [
 	"Ask in Any Language",
 ];
 
-const Carousel = () => {
+const MasterHeadCarousel = () => {
 	return (
 		<div className='w-full z-20 text-[#525252]'>
 			{/* Display items on medium screens and up */}
@@ -43,4 +43,4 @@ const Carousel = () => {
 	);
 };
 
-export default Carousel;
+export default MasterHeadCarousel;
