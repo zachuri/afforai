@@ -33,6 +33,7 @@ const MasterHeadCarousel = () => {
 						<SliderItem key={index} width={250}>
 							<div className='flex flex-row items-center justify-center text-sm border p-1 px-2 rounded-sm space-x-2 bg-[#FAFAFA]'>
 								<Icons.check />
+								<p>{item}</p>
 							</div>
 						</SliderItem>
 					))}
