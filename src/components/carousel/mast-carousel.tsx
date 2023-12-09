@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Icons } from "./ui/icons";
+import { Icons } from "../ui/icons";
 import SliderContainer, { SliderItem } from "./slider";
 
 const items = [

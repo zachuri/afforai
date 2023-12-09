@@ -9,6 +9,7 @@ interface Props {
 	initialOffsetX: number;
 	className?: string;
 	contentWidth: number;
+	direction: "left" | "right"; // Add direction prop
 }
 
 const SliderContainer: React.FC<Props> = ({
@@ -16,14 +17,13 @@ const SliderContainer: React.FC<Props> = ({
 	initialOffsetX,
 	className,
 	contentWidth,
+	direction = "left", // Default to left direction
 }) => {
-	const { innerWidth } = useContext(SizeContext);
-
 	const refScrollX = useRef<number>(initialOffsetX);
 	const refContainer = useRef<HTMLDivElement>(null);
 	const refContent = useRef<HTMLDivElement>(null);
 
-	const enabled = innerWidth < contentWidth;
+	const enabled = true; // Always enable scrolling for this example
 
 	useAnimationFrame(
 		enabled,
@@ -32,15 +32,26 @@ const SliderContainer: React.FC<Props> = ({
 			const { current: elContent } = refContent;
 
 			if (elContainer && elContent) {
-				refScrollX.current += 0.2;
+				if (direction === "left") {
+					refScrollX.current += 0.2;
+				} else {
+					refScrollX.current -= 0.2;
+				}
+
 				elContainer.scrollLeft = refScrollX.current;
 
-				if (elContainer.scrollLeft >= elContent.clientWidth) {
+				if (
+					direction === "left" &&
+					elContainer.scrollLeft >= elContent.clientWidth
+				) {
 					refScrollX.current = 0;
 					elContainer.scrollLeft = 0;
+				} else if (direction === "right" && elContainer.scrollLeft <= 0) {
+					refScrollX.current = elContent.clientWidth;
+					elContainer.scrollLeft = elContent.clientWidth;
 				}
 			}
-		}, [])
+		}, [direction])
 	);
 
 	return (
@@ -65,8 +76,7 @@ export const SliderItem: React.FC<ItemProps> = ({ children, width }) => {
 	return (
 		<div
 			className='inline-flex justify-center items-center mx-5'
-			// style={{ width }}
-		>
+			style={{ width }}>
 			{children}
 		</div>
 	);

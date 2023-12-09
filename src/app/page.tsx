@@ -12,10 +12,12 @@ import Landing10 from "@/components/landing-10";
 import Landing11 from "@/components/landing-11";
 import Landing12 from "@/components/landing-12";
 import TestitmonialReview from "@/components/testimonial-review";
+import Testimonials1 from "@/components/carousel/testimonials-1";
+import Testimonials2 from "@/components/carousel/testimonials-2";
 
 export default function Home() {
 	return (
-		<main className='container mt-[65px] md:mt-[104px] md:px-[60px] flex min-h-screen flex-col items-center'>
+		<main className='container mt-[65px] md:mt-[104px] md:px-[60px] flex flex-col items-center'>
 			<MasterHead />
 			<Users />
 			<Landing4 />
@@ -28,6 +30,8 @@ export default function Home() {
 			<Landing11 />
 			<Landing12 />
 			<TestitmonialReview />
+			<Testimonials1 />
+			<Testimonials2 />
 		</main>
 	);
 }

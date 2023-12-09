@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import React from "react";
 import { Icons } from "./ui/icons";
 import { Button } from "./ui/button";
-import Carousel from "./mast-carousel";
+import Carousel from "./carousel/mast-carousel";
 import Image from "next/image";
 
 const MasterHead = () => {
 	return (
-		<section className='relative mx-[60px] w-full flex flex-col items-center justify-center space-y-10 max-md:pt-5'>
+		<section className='relative mx-[60px] w-full flex flex-col items-center justify-center space-y-10 max-md:pt-5 '>
 			<div className='max-md:w-full px-2 p-1 border-[2px] border-black rounded-xl text-sm font-medium flex flex-row items-center justify-center space-x-2 bg-gradient-to-r from-[#fd7e14] to-[#ffc107]'>
 				<img
 					className='w-[26px] h-[20px]'
@@ -49,7 +49,7 @@ const MasterHead = () => {
 					width={"2000"}
 					height={"1000"}
 					className='rounded-[28px]'
-          priority
+					priority
 				/>
 			</div>
 
@@ -59,7 +59,7 @@ const MasterHead = () => {
 					alt='laptop landing 1'
 					width={"1500"}
 					height={"500"}
-          priority
+					priority
 				/>
 			</div>
 		</section>
