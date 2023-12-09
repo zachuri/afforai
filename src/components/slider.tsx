@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback, useContext, useRef } from "react";
 import { SizeContext } from "@/utils/size-observer";
 import useAnimationFrame from "@/utils/use-animation-frame";

@@ -10,7 +10,8 @@ import Landing8 from "@/components/landing-8";
 import Landing9 from "@/components/landing-9";
 import Landing10 from "@/components/landing-10";
 import Landing11 from "@/components/landing-11";
-import Landing12 from '@/components/landing-12';
+import Landing12 from "@/components/landing-12";
+import TestitmonialReview from "@/components/testimonial-review";
 
 export default function Home() {
 	return (
@@ -23,9 +24,10 @@ export default function Home() {
 			<Landing7 />
 			<Landing8 />
 			<Landing9 />
-			<Landing10 />
+			{/* <Landing10 /> */}
 			<Landing11 />
 			<Landing12 />
+			<TestitmonialReview />
 		</main>
 	);
 }
