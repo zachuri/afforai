@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import React from "react";
-import Testimonial, { TestimonialProps } from "./carousel/testimonials";
+import Testimonials from "./carousel/testimonials";
 
 const item = [
 	{
@@ -14,7 +14,12 @@ const item = [
 			"The platform is free to use with a pay-as-you-go option, and there are no subscriptions required. The platform's Comprehension Model is highly recommended for tasks like document comprehension, reasoning, report writing, and research.",
 	},
 	{
-		testimonial: "I love it! Build totally changed the way I use my unstructured text data at school and in my internship this summer. Something special is brewing over at Afforai!",
+		testimonial:
+			"I love it! Build totally changed the way I use my unstructured text data at school and in my internship this summer. Something special is brewing over at Afforai!",
+	},
+	{
+		testimonial:
+			"This looks good to ease out the data analysis task for the users. But in the Affroi build guide, I couldn't see how efficiently the data analysis is done. Guess I have to take a subscription for it. The product looks great and has a User-friendly interface. Congrats on the launch.",
 	},
 ];
 
@@ -34,7 +39,7 @@ const TestitmonialReview = () => {
 				</p>
 			</div>
 
-			<Testimonial testimonials={item} />
+			<Testimonials testimonials={item} />
 		</section>
 	);
 };

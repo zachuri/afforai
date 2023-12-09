@@ -39,7 +39,6 @@ function Card({ src, title, content }: ItemProp) {
 				alt={src}
 				width={1200}
 				height={600}
-				objectFit='cover'
 			/>
 			<Image
 				className='md:hidden'
@@ -47,7 +46,6 @@ function Card({ src, title, content }: ItemProp) {
 				alt={src}
 				width={1200}
 				height={600}
-				objectFit='cover'
 			/>
 			<div className='px-3 pt-2 pb-4'>
 				<h2 className='text-[#222222] text-lg'>{title}</h2>

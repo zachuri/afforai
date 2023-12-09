@@ -23,6 +23,8 @@ const buttonVariants = cva(
 				accent:
 					"font-light text-white border border-input bg-gradient-to-tl from-custom-purple-600 via-custom-purple-400 to-custom-purple-700 to-custom-purple-900",
 				purple: "border-[2px] text-xs border-[#8036FF] text-[#8036FF]",
+				orange:
+					"border-[2px] text-xs border-[#ff3c05] bg-[#f6e8e5] text-[#ff3a02]",
 			},
 			size: {
 				default: "h-10 px-4 py-2",
