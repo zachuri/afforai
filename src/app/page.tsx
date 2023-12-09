@@ -30,8 +30,8 @@ export default function Home() {
 			<Landing11 />
 			<Landing12 />
 			<TestitmonialReview />
-			<Testimonials1 />
-			<Testimonials2 />
+      <Testimonials1 />
+      <Testimonials2 />
 		</main>
 	);
 }

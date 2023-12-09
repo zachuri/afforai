@@ -12,7 +12,7 @@ export type TestimonialProps = {
 const TestimonialCard: React.FC<TestimonialProps> = ({ testimonial }) => {
 	return (
 		<>
-			<div className='rounded-xl border border-[#E6E6E6] p-[32px] whitespace-normal '>
+			<div className='rounded-xl border border-[#E6E6E6] p-[32px] whitespace-normal mt-5'>
 				<p className='text-base text-[#222222] w-[534px] h-[144px]  '>
 					{testimonial}
 				</p>

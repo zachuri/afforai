@@ -6,7 +6,7 @@ import Testimonials from "./carousel/testimonials-1";
 
 const TestitmonialReview = () => {
 	return (
-		<section>
+		<section className='mb-5'>
 			<div className='flex flex-col items-center justify-center space-y-5'>
 				<Image
 					src={"/assets/ph-review.png"}
