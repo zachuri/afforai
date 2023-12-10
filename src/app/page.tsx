@@ -17,7 +17,7 @@ import Testimonials2 from "@/components/carousel/testimonials-2";
 
 export default function Home() {
 	return (
-		<main className='container mt-[65px] md:mt-[104px] md:px-[60px] flex flex-col items-center'>
+		<main className='container mt-[65px] md:mt-[104px] md:px-[60px] flex flex-col justify-center items-center'>
 			<MasterHead />
 			<Users />
 			<Landing4 />
@@ -30,8 +30,6 @@ export default function Home() {
 			<Landing11 />
 			<Landing12 />
 			<TestitmonialReview />
-      <Testimonials1 />
-			<Testimonials2 />
 		</main>
 	);
 }

@@ -30,41 +30,47 @@ const SliderContainer: React.FC<Props> = ({
 
 	const enabled = true; // Always enable scrolling for this example
 
-	const handleMouseDown = useCallback((e: React.MouseEvent) => {
-		refIsDragging.current = true;
-		refDragStartX.current = e.clientX;
-	}, []);
+	const handleMouseDown = useCallback(
+		(e: React.MouseEvent) => {
+			refIsDragging.current = true;
+			refDragStartX.current = e.clientX;
+		},
+		[]
+	);
 
 	const handleMouseUp = useCallback(() => {
 		refIsDragging.current = false;
 	}, []);
 
-	const handleMouseMove = useCallback((e: MouseEvent) => {
-		if (refIsDragging.current) {
-			const deltaX = e.clientX - refDragStartX.current;
+	const handleMouseMove = useCallback(
+		(e: MouseEvent) => {
+			if (refIsDragging.current) {
+				const deltaX = e.clientX - refDragStartX.current;
 
-			if (deltaX !== 0) {
-				refScrollX.current -= deltaX;
-				const { current: elContainer } = refContainer;
+				if (deltaX !== 0) {
+					refScrollX.current -= deltaX;
+					const { current: elContainer } = refContainer;
 
-				if (elContainer) {
-					elContainer.scrollLeft = refScrollX.current;
+					if (elContainer) {
+						elContainer.scrollLeft = refScrollX.current;
 
-					if (refScrollX.current <= 0) {
-						refScrollX.current = elContainer.scrollLeft = 0;
-					} else if (
-						refScrollX.current >=
-						elContainer.scrollWidth - elContainer.clientWidth
-					) {
-						refScrollX.current = elContainer.scrollLeft =
-							elContainer.scrollWidth - elContainer.clientWidth;
+						if (refScrollX.current <= 0) {
+							refScrollX.current = elContainer.scrollLeft = 0;
+						} else if (
+							refScrollX.current >=
+							elContainer.scrollWidth - elContainer.clientWidth
+						) {
+							refScrollX.current = elContainer.scrollLeft =
+								elContainer.scrollWidth - elContainer.clientWidth;
+						}
 					}
-				}
 
-				refDragStartX.current = e.clientX;
+					refDragStartX.current = e.clientX;
+				}
 			}
-		}
-	}, []);
+		},
+		[refContainer]
+	);
 
 	// Attach event listeners for mouse down, up, and move
 	useEffect(() => {

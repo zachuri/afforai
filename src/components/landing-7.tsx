@@ -3,9 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Animation from './animation';
 
 const Landing7 = () => {
 	return (
+    <Animation direction='up'>
 		<section className='flex flex-col my-[250px] md:grid grid-cols-2 gap-4 '>
 			{/* Content */}
 			<div className='md:flex flex-col justify-center space-y-4 px-3 md:mr-5'>
@@ -46,6 +48,7 @@ const Landing7 = () => {
 				/>
 			</div>
 		</section>
+    </Animation>
 	);
 };
 

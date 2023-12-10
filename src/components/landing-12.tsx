@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import React from "react";
+import Testimonials2 from "./carousel/testimonials-2";
+import Animation from "./animation";
 
 type ItemProp = {
 	src: string;
@@ -57,24 +59,26 @@ function Card({ src, title, content }: ItemProp) {
 
 const Landing12 = () => {
 	return (
-		<section>
-			<div className='flex flex-col items-center justify-center w-full gap-[15px] my-[160px]'>
-				<h1 className='text-[36px] font-semibold max-w-[700x] text-center'>
-					Unquestionable accuracy & reliability
-				</h1>
+		<Animation direction='up'>
+			<section>
+				<div className='flex flex-col items-center justify-center w-full gap-[15px] my-[160px]'>
+					<h1 className='text-[36px] font-semibold max-w-[700x] text-center'>
+						Unquestionable accuracy & reliability
+					</h1>
 
-				<p className='max-w-[580px] text-center text-primary-foreground '>
-					We pride ourselves on the quality of our chatbot’s responses, and go
-					the extra mile to ensure the accuracy & reliability of our answers.
-				</p>
+					<p className='max-w-[580px] text-center text-primary-foreground '>
+						We pride ourselves on the quality of our chatbot’s responses, and go
+						the extra mile to ensure the accuracy & reliability of our answers.
+					</p>
 
-				<div className='flex flex-col md:grid grid-cols-3 gap-5 mt-5'>
-					{items.map((item, index) => (
-						<Card key={index} {...item} />
-					))}
+					<div className='flex flex-col md:grid grid-cols-3 gap-5 mt-5'>
+						{items.map((item, index) => (
+							<Card key={index} {...item} />
+						))}
+					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</Animation>
 	);
 };
 

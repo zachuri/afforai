@@ -3,10 +3,13 @@
 import Image from "next/image";
 import React from "react";
 import Testimonials from "./carousel/testimonials-1";
+import Testimonials1 from "./carousel/testimonials-1";
+import Testimonials2 from "./carousel/testimonials-2";
+import Animation from "./animation";
 
 const TestitmonialReview = () => {
 	return (
-		<section className='mb-5'>
+		<section className='mb-5 w-full'>
 			<div className='flex flex-col items-center justify-center space-y-5'>
 				<Image
 					src={"/assets/ph-review.png"}
@@ -18,6 +21,13 @@ const TestitmonialReview = () => {
 				<p className='text-primary-foreground'>
 					Loved by thousands, all around the World
 				</p>
+			</div>
+
+			<div>
+				<Testimonials1 />
+			</div>
+			<div>
+				<Testimonials2 />
 			</div>
 		</section>
 	);

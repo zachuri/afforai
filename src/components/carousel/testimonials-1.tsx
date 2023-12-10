@@ -24,7 +24,11 @@ const testimonials = [
 
 const Testimonials1 = () => {
 	return (
-		<SliderContainer contentWidth={1062} initialOffsetX={0} direction={"left"} id={0}>
+		<SliderContainer
+			contentWidth={1062}
+			initialOffsetX={0}
+			direction={"left"}
+			id={0}>
 			{testimonials.map((testimonial, index) => (
 				<SliderItem key={index} width={590}>
 					<TestimonialCard testimonial={testimonial.testimonial} />
